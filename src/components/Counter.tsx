@@ -1,0 +1,24 @@
+import { useState } from "react";
+
+const Counter = () => {
+    const [count, setCount] = useState(0);
+
+    const increment = () => {
+        setCount(count + 1);
+    }
+    const decrement = () => {
+        setCount(count - 1);
+    }
+
+    return (
+        <>
+            <h1>Count: {count}</h1>
+            <div className="flex flex-col gap-y-5">
+                <button onClick={increment}>Increment</button>
+                <button onClick={decrement}>Decrement</button>
+            </div>
+        </>
+    );
+}
+
+export default Counter;

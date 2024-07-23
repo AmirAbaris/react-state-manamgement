@@ -1,11 +1,12 @@
-// import { Button } from "@nextui-org/react";
+import React from 'react';
 import './App.css'
-import NameList from './components/NameList';
+
+const Counter = React.lazy(() => import('./components/Counter'));
 
 function App() {
   return (
     <div className='flex flex-col gap-y-12 items-center justify-center min-h-dvh'>
-      <NameList />
+      <Counter />
     </div>
   );
 }
