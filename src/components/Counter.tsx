@@ -1,7 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Counter = () => {
     const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        console.log('the count is: ', count);
+
+        /**
+         * optional return fn:
+         * the useEffect hook will destroy itself and it runs this return fn before doing so,
+         *  whenever something in the dependency changes
+         */
+        return () => {
+            console.log('i am being cleaned up!');
+        }
+    }, [count]); // the dependency array!
 
     const increment = () => {
         setCount(count + 1);
